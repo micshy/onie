@@ -115,7 +115,11 @@ done
 check_machine_image()
 {
     if [ "$onie_machine" != "$image_machine" ] ; then
-        fail=yes
+        onie_machine_dflt=mlnx_x86
+        vendor_onie_machine=$(echo $onie_machine | awk '{print substr($1,1,4)}')
+        if [ "$image_machine" != "$onie_machine_dflt" ] || [ "$vendor_onie_machine" != "mlnx" ] ; then
+            fail=yes
+       fi
     fi
     if [ "$onie_machine_rev" != "$image_machine_rev" ] ; then
         fail=yes
