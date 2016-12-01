@@ -28,6 +28,11 @@ CROSSTOOL_NG_STAMP		= $(CROSSTOOL_NG_SOURCE_STAMP) \
 				  $(CROSSTOOL_NG_CONFIGURE_STAMP) \
 				  $(CROSSTOOL_NG_BUILD_STAMP) 
 
+ifeq ($(MAKE_CT_PREFETCH_FOLDER),)
+$(error MAKE_CT_PREFETCH_FOLDER for crosstool components prefetching is required, till we have a cached url)
+endif
+MAKE_CT_URL			= file://$(MAKE_CT_PREFETCH_FOLDER)
+
 # Setup a mirror to use for packages needed by crosstool-NG
 CROSSTOOL_ONIE_MIRROR  ?= $(ONIE_MIRROR)/crosstool-NG
 export CROSSTOOL_ONIE_MIRROR
