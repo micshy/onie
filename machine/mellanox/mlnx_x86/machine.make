@@ -30,15 +30,15 @@ export EXTRA_CMDLINE_LINUX := acpi_enforce_resources=lax acpi=noirq $(EXTRA_CMDL
 # mode: makefile-gmake
 # End:
 
-LINUX_VERSION		= 4.9-rc7
+LINUX_VERSION		= 4.9
 
 LINUX_MINOR_VERSION	= 0
 
 LINUX_TARBALL_URLS	+= file://$(MAKE_CT_PREFETCH_FOLDER)
 
-LINUX_TARBALL		= linux-4.9-rc7.0.tar.xz
+LINUX_TARBALL		= linux-4.9.0.tar.xz
 
-LINUX_CONFIG		= conf/kernel/4.9-rc7.0/linux.x86_64.config
+LINUX_CONFIG		= conf/kernel/4.9.0/linux.x86_64.config
 
 # Specify uClibc version
 UCLIBC_VERSION = 0.9.32.1
