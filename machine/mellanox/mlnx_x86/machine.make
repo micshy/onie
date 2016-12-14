@@ -55,5 +55,3 @@ $(MELLANOX_NETBOOT_PXE_UPDATER): $(MACHINEDIR)/net_boot_label.template
 	mkdir -p $(@D)
 	cat $< | sed -e "s/@VERSION@/$(MACHINE_PREFIX)/g" > $@
 	chmod +x $@
-
-include $(MACHINEDIR)/mellanox_bsp_tools.make

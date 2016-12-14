@@ -357,6 +357,9 @@ endif
 ifeq ($(IPMITOOL_ENABLE),yes)
   include make/ipmitool.make
 endif
+
+-include $(MACHINEDIR)/machine.extra_packages.include
+
 include make/images.make
 include make/demo.make
 
